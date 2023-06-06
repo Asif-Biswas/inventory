@@ -16,9 +16,9 @@ class Product(models.Model):
     product_id = models.CharField(max_length=100)
     unique_id = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
-    barcode = models.ImageField(upload_to='barcodes/', blank=True)
+    barcode = models.ImageField(upload_to='barcodes/', blank=True, null=True)
     batch_no = models.CharField(max_length=100)
-    expiry_date = models.DateTimeField
+    expiry_date = models.DateTimeField(null=True, blank=True)
     lot_no = models.CharField(max_length=100)
     unit_price = models.DecimalField(
         max_digits=15, decimal_places=0, default=0)
